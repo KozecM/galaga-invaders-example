@@ -6,7 +6,7 @@ class Alien
   HEIGHT = 50
 
   attr_accessor :location
-
+  
   def initialize
     @location = Vector.new(200, 200)
   end
@@ -14,6 +14,12 @@ class Alien
   def move
   end
 
+  def add_missile(missiles)
+    missile = Missile.new(muzzle_location)
+    missile.launch(10)
+    missiles.add(missile)
+  end
+  
   def draw
     puts self
   end
@@ -24,6 +30,10 @@ class Alien
 
   def bottom_edge
     location.y + half_height
+  end
+  
+  def muzzle_location
+    Vector.new(location.x, bottom_edge)
   end
 
   private

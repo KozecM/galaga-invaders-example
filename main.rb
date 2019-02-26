@@ -57,8 +57,15 @@ GalagaInvaders.new.show
 Reflecting on Principle
 -----------------------
 1. What is "duck typing" and what does it have to do with polymorphism?
+    Duck typing makes code more polymorphic. It allows many different object to accept the same messages. 
+
 2. What are some common code smells that indicate the need for relying on a
    "duck type" rather than a concrete class?
+    Cast statements that switch on class, kind_of? and is_a? (like the example above), and using 
+    responds_to?. Responds to might seems better, but it still expects very specific classes.
+
 3. True or False: Abstractions like duck typing make code explicitly easier to
    understand, vs. using concrete types.
+    False, they make them harder to understand because the ducktype is virtual. you have to
+    show where it is in your testing and documentation.
 =end

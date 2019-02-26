@@ -16,6 +16,12 @@ class Ship
   def muzzle_location
     Vector.new(location.x, top_edge)
   end
+  
+  def add_missile(missiles)
+    missile = Missile.new(muzzle_location)
+    missile.launch(-10)
+    missiles.add(missile)
+  end
 
   def move_left
     move(-DEFAULT_VELOCITY)
