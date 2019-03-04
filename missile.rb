@@ -2,9 +2,10 @@ class Missile
 
   attr_accessor :x, :y, :velocity
 
-  def initialize(x, y)
-    @x = x
-    @y = y
+  def initialize(args)
+    @x = args.fetch(:x, 200)
+    @y = args.fetch(:y, 200)
+    @velocity =args.fetch(:velocity, 0)
   end
 
   def launch(velocity)
