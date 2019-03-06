@@ -1,12 +1,14 @@
 class Fort < Structure
 
+  include Drawable
+  include Destroyable
+  include Damagable
+  include Hittable
+  
   def initialize(args)
-    super
+    @location = args.fetch[:location]
+    @hit_points = args.fetch[:hit_points]
     @sprite = args.fetch[:sprite]
-  end
-
-  def draw
-    # Draws the `sprite` at `location`
   end
 
 end
